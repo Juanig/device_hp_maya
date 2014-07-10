@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+LAST_KMSG='/proc/last_kmsg'
+COPY_TO="/data/logs/last_kmsg-$(date +%Y%m%d-%H%M%S)"
+
+if [ -f "${LAST_KMSG}" ]; then
+    cat "${LAST_KMSG}" > "${COPY_TO}"
+    chmod 640 "${COPY_TO}"
+    chown root.log "${COPY_TO}"
+fi

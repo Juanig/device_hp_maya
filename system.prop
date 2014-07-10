@@ -1,0 +1,36 @@
+#
+# system.prop for maya
+#
+ro.build.epad.project=TF501T
+ro.opengles.version = 131072
+rild.libpath=/system/lib/libril-icera.so
+rild.libargs=-e rmnet0
+ro.radio.noril=true
+ro.ril.wake_lock_timeout=200000
+
+# don't preload OpenGL in Zygote, the Tegra drivers do not like it
+ro.zygote.disable_gl_preload=true
+
+
+wifi.interface=wlan0
+ap.interface=wlan0
+persist.tegra.nvmmlite = 1
+persist.wlan.ti.calibrated = 0
+ro.sf.lcd_density=240
+
+#NFC
+debug.nfc.fw_download=false
+debug.nfc.se=false
+
+#support dynamic resolution change property
+ro.streaming.video.drs=true
+
+# use glcomposer as the default compositor
+persist.tegra.compositor=glcomposer
+
+# disable EGL_BUFFER_PRESERVED extension for OpenGLRenderer
+debug.hwui.render_dirty_regions=false
+
+#supprot change conservative governor when audio playing in early suspend
+media.audio.screen_off_playing=0
+

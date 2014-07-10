@@ -1,0 +1,19 @@
+## Vold 2.0 fstab for maya
+
+#######################
+## Regular device mount
+##
+## Format: dev_mount <label> <mount_point> <part> <sysfs_path1...>
+## label        - Label for the volume
+## mount_point  - Where the volume will be mounted
+## part         - Partition # (1 based), or 'auto' for first usable partition.
+## <sysfs_path> - List of sysfs paths to source devices
+######################
+
+# Mounts the first usable partition of the specified device
+# micro SD
+dev_mount sdcard1 /storage/sdcard1 auto /devices/platform/sdhci-tegra.2/mmc_host/mmc1
+# SD
+dev_mount sdcard2 /storage/sdcard2 auto /devices/platform/tegra-ehci.2/usb1/1-1/1-1.1
+# USB
+dev_mount usbdrive /storage/usbdrive auto /devices/platform/tegra-ehci.2/usb1/1-1/1-1.2
